@@ -1,4 +1,3 @@
-from common.utils import printArray;
 
 def climb_stair(m):
   if m < 0:

@@ -1,7 +1,8 @@
 meta:
   tags:
     - Dynamic Programming
+    - Greedy
   related:
-    - 366
-    - 392
+    - 117
+    - 752
     

@@ -12,4 +12,3 @@ def transversal(root):
   if not sum in mp:
     mp[sum] = 1
   return sum
-  

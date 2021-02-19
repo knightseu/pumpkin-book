@@ -1,6 +1,7 @@
 def printArray(A):
-  m = len(A)
-  n = len(A[0])
+#  m = len(A)
+#  n = len(A[0])
+  m, n = len(A), len(A[0])
   for i in range(m):
     for j in range(n):
       print(A[i][j], end = ",")

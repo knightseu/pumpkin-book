@@ -13,12 +13,16 @@ def lca(root, v1, v2):
     if left_lca and right_lca:
         return root
 
-    return left_lca if right_lca is None else left_lca
+    if left_lca:
+        return left_lca
+    else:
+        return right_lca
 
 
 l1 = [6,2,8,0,4,7,9,'#','#',3,5]
 
 root = buildTree(l1)
 printByLevel(root)
+# import pdb; pdb.set_trace()
 
-printByLevel(lca(root, 3, 5))
+printByLevel(lca(root, 7, 5))

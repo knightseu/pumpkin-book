@@ -1,5 +1,7 @@
 # https://www.lintcode.com/problem/486/?_from=ladder&fromId=149
 # merge K sorted array
+import heapq
+
 mat = [
     [1, 3, 5, 7],
     [2, 4, 6],
@@ -11,12 +13,17 @@ def merge(mat):
 
     myheap = []
     rst = []
-    import pdb; pdb.set_trace()
 
+    # a tuple, (value, index of que, position in that que)
     for i in range(M):
-        heappush(myheap, mat[i][0])
+        heapq.heappush(myheap, (mat[i][0], i, 0))
 
-    rst.append(heappop(myheap))
+    while (len(myheap)):
+        val, queIndex, quePos = myheap[0]
+        heapq.heappop(myheap)
+        rst.append(val)
+        if quePos+1 < len(mat[queIndex]):
+            heapq.heappush(myheap, (mat[queIndex][quePos+1], queIndex, quePos+1))
 
     return rst
 

@@ -5,7 +5,7 @@ class TreeNode:
     self.left = None
     self.right = None
     self.data = val
-  
+
 def in_order_str(root):
   if root is None:
     return ""
@@ -22,7 +22,7 @@ def printByLevel(root):
       # print("Level has ", i, "nodes")
       curNode = curL.pop(0)
       print(curNode.data, end=" ")
-      if curNode.left: 
+      if curNode.left:
         curL.append(curNode.left)
       elif not curNode == dummyNode:
         curL.append(dummyNode)
@@ -31,7 +31,7 @@ def printByLevel(root):
       elif not curNode == dummyNode:
         curL.append(dummyNode)
     print(" ")
-      
+
 def buildTree(li):
   # check is i is a valid index of list 'li'
   def isValidIndex(li, i):
@@ -61,7 +61,7 @@ def buildTree(li):
 def genCompleteBinaryTree(level):
   if level <= 0:
     return None
-  
+
   prevLevelNodes = []
   curVal = 0
   root = None
@@ -78,8 +78,6 @@ def genCompleteBinaryTree(level):
     else:
       root = curNodes[0]
     prevLevelNodes = curNodes
-  
+
   # printByLevel(root)
   return root
-
-  
